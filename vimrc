@@ -65,3 +65,19 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 				\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" ~/.eslintrc.json
+" {
+" 	"env": {
+" 		"browser": true,
+" 		"node": true,
+" 		"commonjs": true,
+" 		"es6": true,
+" 		"mocha": true
+" 	},
+" 	"extends": "eslint:recommended",
+" 	"parserOptions": {
+" 		"sourceType": "module",
+" 		"ecmaVersion": 2020
+" 	}
+" }
