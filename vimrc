@@ -9,6 +9,7 @@ set cursorline
 set fileencoding=utf-8
 set fileencodings=utf-8,gb2312,gbk,cp936
 set ignorecase
+set incsearch
 
 syntax on
 imap jk <esc>
@@ -53,6 +54,7 @@ let g:airline_theme='gruvbox'
 let g:gruvbox_contrast_dark='hard'
 let g:jsx_ext_required=0
 let g:UltiSnipsExpandTrigger="<C-l>"
+au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
 " 背景透明
  hi Normal ctermbg=NONE
