@@ -21,6 +21,21 @@ Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'mxw/vim-jsx'
+
+" ES2015 code snippets
+Plug 'epilande/vim-es2015-snippets'
+
+" React code snippets (Optional)
+Plug 'epilande/vim-react-snippets'
+
+" Ultisnips
+Plug 'SirVer/ultisnips'
+
+" Trigger configuration (Optional)
+" let g:UltiSnipsExpandTrigger="<C-l>"
+
+Plug 'chemzqm/wxapp.vim'
 call plug#end()
 
 nmap tt :NERDTreeToggle<cr>
@@ -33,6 +48,8 @@ colorscheme gruvbox
 let g:indentLine_concealcursor = ''
 let g:airline_theme='gruvbox'
 let g:gruvbox_contrast_dark='hard'
+let g:jsx_ext_required=0
+let g:UltiSnipsExpandTrigger="<C-l>"
 
 " 背景透明
  hi Normal ctermbg=NONE
