@@ -19,7 +19,11 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'scrooloose/nerdtree'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
+
+nmap tt :NERDTreeToggle<cr>
 
 se t_Co=256
 set background=dark
