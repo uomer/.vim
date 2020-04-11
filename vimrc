@@ -6,6 +6,9 @@ set tabstop=2
 set scrolloff=5
 set wildmenu
 set cursorline
+set fileencoding=utf-8
+set fileencodings=utf-8,gb2312,gbk,cp936
+set ignorecase
 
 syntax on
 imap jk <esc>
