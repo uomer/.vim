@@ -36,9 +36,12 @@ Plug 'SirVer/ultisnips'
 " let g:UltiSnipsExpandTrigger="<C-l>"
 
 Plug 'chemzqm/wxapp.vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install', 'for' :['markdown', 'vim-plug'] }
+Plug 'plasticboy/vim-markdown'
 call plug#end()
 
 nmap tt :NERDTreeToggle<cr>
+map <F8> <Plug>MarkdownPreviewToggle
 
 se t_Co=256
 set background=dark
