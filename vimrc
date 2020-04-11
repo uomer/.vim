@@ -35,3 +35,7 @@ let g:gruvbox_contrast_dark='hard'
 " hi LineNr ctermbg=NONE ctermfg=grey
 " hi CursorLineNr cterm=NONE ctermbg=234 ctermfg=72
 " hi Cursorline cterm=NONE ctermbg=234
+"
+
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+				\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
