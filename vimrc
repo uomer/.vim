@@ -12,7 +12,13 @@ set ignorecase
 set incsearch
 
 syntax on
+let mapleader=" "
 imap jk <esc>
+nmap <leader>h <c-w>h
+nmap <leader>j <c-w>j
+nmap <leader>k <c-w>k
+nmap <leader>l <c-w>l
+nmap <leader>o <c-w>o
 
 call plug#begin('~/.vim/plugged')
 Plug 'mhinz/vim-startify'
