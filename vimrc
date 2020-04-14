@@ -87,3 +87,10 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 " 		"ecmaVersion": 2020
 " 	}
 " }
+"
+"
+" coc Plugin:
+"
+" coc-git coc-smartf coc-pairs coc-tsserver coc-emmet coc-html coc-stylelint
+" coc-java coc-python coc-json coc-go coc-prettier
+"
