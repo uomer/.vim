@@ -19,6 +19,19 @@ nmap <leader>j <c-w>j
 nmap <leader>k <c-w>k
 nmap <leader>l <c-w>l
 nmap <leader>o <c-w>o
+nmap <leader>n <c-w>n
+nmap <leader>= <c-w>=
+nmap <leader>\| <c-w>\|
+nmap <leader>w- <c-w>- 20
+nmap <leader>w= <c-w>+ 20
+nmap <leader>v- <c-w>< 20
+nmap <leader>v= <c-w>> 20
+
+nmap <leader>bn :bn<cr>
+nmap <leader>bp :bp<cr>
+nmap <leader>vs :vs<cr>
+nmap <leader>sp :sp<cr>
+nmap <leader>wc :hid<cr>
 
 call plug#begin('~/.vim/plugged')
 Plug 'mhinz/vim-startify'
@@ -68,9 +81,21 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 " hi CursorLineNr cterm=NONE ctermbg=234 ctermfg=72
 " hi Cursorline cterm=NONE ctermbg=234
 "
+"coc keymap
+
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<CR>"
 
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 				\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+nnoremap <leader>ei <Plug>(coc-diagnostic-info)
+nnoremap <leader>en <Plug>(coc-diagnostic-next)
+nnoremap <leader>ep <Plug>(coc-diagnostic-prev)
+nnoremap <leader>een <Plug>(coc-diagnostic-next-error)
+nnoremap <leader>eep <Plug>(coc-diagnostic-prev-error)
+nnoremap <leader>cdef <Plug>(coc-definition)
+nnoremap <leader>cdec <Plug>(coc-declaration)
+nnoremap <leader>cimp <Plug>(coc-implementation)
 
 " ~/.eslintrc.json
 " {
@@ -88,9 +113,9 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 " 	}
 " }
 "
-"
+
 " coc Plugin:
 "
 " coc-git coc-smartf coc-pairs coc-tsserver coc-emmet coc-html coc-stylelint
 " coc-java coc-python coc-json coc-go coc-prettier
-"
+
