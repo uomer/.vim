@@ -10,6 +10,7 @@ set fileencoding=utf-8
 set fileencodings=utf-8,gb2312,gbk,cp936
 set ignorecase
 set incsearch
+set mouse=a
 
 syntax on
 let mapleader=" "
@@ -29,6 +30,7 @@ nmap <leader>v= <c-w>> 20
 
 nmap <leader>bn :bn<cr>
 nmap <leader>bp :bp<cr>
+nmap <leader>bd :bd<cr>
 nmap <leader>vs :vs<cr>
 nmap <leader>sp :sp<cr>
 nmap <leader>wc :hid<cr>
