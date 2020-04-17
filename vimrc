@@ -10,6 +10,8 @@ set fileencoding=utf-8
 set fileencodings=utf-8,gb2312,gbk,cp936
 set ignorecase
 set incsearch
+set autoread<
+set	expandtab 
 set mouse=a
 
 syntax on
@@ -28,6 +30,9 @@ nmap <leader>w= <c-w>+ 20
 nmap <leader>v- <c-w>< 20
 nmap <leader>v= <c-w>> 20
 
+nmap <leader>r :e!<cr>
+nmap <leader>m :set mouse=a<cr>
+nmap <leader>mn :set mouse=<cr>
 nmap <leader>bn :bn<cr>
 nmap <leader>bp :bp<cr>
 nmap <leader>bd :bd<cr>
