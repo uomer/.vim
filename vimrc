@@ -39,11 +39,13 @@ nmap <leader>bd :bd<cr>
 nmap <leader>vs :vs<cr>
 nmap <leader>sp :sp<cr>
 nmap <leader>wc :hid<cr>
+nmap <leader>ig :IndentGuidesToggle<cr>
 
 call plug#begin('~/.vim/plugged')
 Plug 'mhinz/vim-startify'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'nathanaelkane/vim-indent-guides'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree'
