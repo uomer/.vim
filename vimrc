@@ -82,6 +82,10 @@ let g:airline_theme='gruvbox'
 let g:gruvbox_contrast_dark='hard'
 let g:jsx_ext_required=0
 let g:UltiSnipsExpandTrigger="<C-l>"
+
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=242
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=239
+
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
 " 背景透明
