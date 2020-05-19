@@ -10,7 +10,7 @@ set fileencoding=utf-8
 set fileencodings=utf-8,gb2312,gbk,cp936
 set ignorecase
 set incsearch
-set autoread<
+set autoread
 set	expandtab 
 set mouse=a
 
