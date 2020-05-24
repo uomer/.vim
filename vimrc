@@ -43,6 +43,8 @@ nmap <leader>ig :IndentGuidesToggle<cr>
 
 nmap <leader>cn :cn<cr>
 nmap <leader>cp :cp<cr>
+nmap <leader>cl :cl<cr>
+nmap <leader>cw :cw<cr>
 
 call plug#begin('~/.vim/plugged')
 Plug 'mhinz/vim-startify'
