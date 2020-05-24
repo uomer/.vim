@@ -41,6 +41,9 @@ nmap <leader>sp :sp<cr>
 nmap <leader>wc :hid<cr>
 nmap <leader>ig :IndentGuidesToggle<cr>
 
+nmap <leader>cn :cn<cr>
+nmap <leader>cp :cp<cr>
+
 call plug#begin('~/.vim/plugged')
 Plug 'mhinz/vim-startify'
 Plug 'vim-airline/vim-airline'
