@@ -73,6 +73,7 @@ Plug 'chemzqm/wxapp.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install', 'for' :['markdown', 'vim-plug'] }
 Plug 'plasticboy/vim-markdown'
 call plug#end()
+let g:coc_disable_startup_warning = 1
 
 nmap tt :NERDTreeToggle<cr>
 map <F8> <Plug>MarkdownPreviewToggle
