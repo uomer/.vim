@@ -60,7 +60,7 @@ let g:coc_disable_startup_warning = 1
 
 nmap tt :NERDTreeToggle<cr>
 let NERDTreeWinSize=25
-nmap bb :TagbarToggle<cr>
+nmap <leader>bb :TagbarToggle<cr>
 let g:tagbar_width=25
 let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
