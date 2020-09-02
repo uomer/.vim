@@ -54,6 +54,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'majutsushi/tagbar'
+Plug 'chemzqm/wxapp.vim'
 
 call plug#end()
 let g:coc_disable_startup_warning = 1
