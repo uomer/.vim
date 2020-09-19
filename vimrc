@@ -91,7 +91,7 @@ let g:tagbar_type_go = {
     \ 'ctagsargs' : '-sort -silent'
     \ }
 
-se t_Co=256
+set t_Co=256
 set background=dark
 set completeopt=noinsert,menuone,noselect
 let g:gruvbox_italic=1
