@@ -12,7 +12,7 @@ set ignorecase
 set incsearch
 set autoread
 set	expandtab 
-set mouse=a
+set mouse=
 
 syntax on
 let mapleader=" "
