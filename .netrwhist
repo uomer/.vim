@@ -1,3 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/home/wym/workspace/dtfcadmin/src/Pages/Art'
+let g:netrw_dirhist_8='/home/wym/workspace/www'
+let g:netrw_dirhist_7='/home/wym/workspace'
+let g:netrw_dirhist_6='/home/wym'
+let g:netrw_dirhist_5='/home/wym/backup/data/backup/code/wmys/src/art'
+let g:netrw_dirhist_4='/home/wym/backup/data/backup/code/wmys/src'
+let g:netrw_dirhist_3='/home/wym/backup/data/backup/code/wmys/src/set_order'
+let g:netrw_dirhist_2='/home/wym/backup/data/backup/code/wmys/src'
 let g:netrw_dirhist_1='/home/wym/backup/data/backup/code/wmys/src/set_order'
