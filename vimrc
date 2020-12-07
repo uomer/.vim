@@ -44,5 +44,7 @@ nmap tt :NERDTreeToggle<cr>
 let NERDTreeWinSize=25
 
 colorscheme gruvbox
+set background=dark
 
-hi Normal ctermbg=NONE
+" 背景透明
+" hi Normal ctermbg=NONE
