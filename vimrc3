@@ -8,7 +8,7 @@ set scrolloff=5
 set wildmenu
 set cursorline
 set fileencoding=utf-8
-set fileencodings=utf-8,gb2312,gbk,cp936
+"set fileencodings=utf-8,gb2312,gbk
 set ignorecase
 set incsearch
 set autoread
@@ -52,7 +52,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'chemzqm/wxapp.vim'
 call plug#end()

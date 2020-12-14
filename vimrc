@@ -1,50 +1,70 @@
-set autoindent
 set number
-set wildmenu
-set incsearch
-set ignorecase
+set autoindent
 set expandtab
-set nobomb
-set nocp
-filetype plugin on
+set incsearch
+set cursorline
+set cursorcolumn
+set wildmenu
 syntax on
-set shiftwidth=2
-set tabstop=2
 set softtabstop=2
+set tabstop=2
+set shiftwidth=2
+set fileencoding=utf8
+set fileencodings=
 set scrolloff=5
 set laststatus=2
-set fileencoding=utf8
-set fileencodings=utf-8,gb2312,gbk,cp936
 
+let mapleader=" "
 imap jk <ESC>
-nmap vs :vs<CR>
-nmap wo <C-w>o
-nmap wh <C-w>h
-nmap wj <C-w>j
-nmap wk <C-w>k
-nmap wl <C-w>l
+nmap <leader>o <C-w>o
+nmap <leader>h <C-w>h
+nmap <leader>j <C-w>j
+nmap <leader>k <C-w>k
+nmap <leader>l <C-w>l
+nmap <leader>bd :bd<CR>
+nmap <leader>bn :bn<CR>
+nmap <leader>bp :bp<CR>
+nmap <leader>r :e!<cr>
+nmap <leader>t :NERDTreeToggle<CR>
 
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
 
 call plug#begin('~/.vim/plugged')
 Plug 'mhinz/vim-startify'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'chemzqm/wxapp.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
-let g:coc_disable_startup_warning = 1
-
-nmap tt :NERDTreeToggle<cr>
-let NERDTreeWinSize=25
-
-colorscheme gruvbox
+set t_Co=256
 set background=dark
 
+colorscheme gruvbox
+
 " 背景透明
-" hi Normal ctermbg=NONE
+ hi Normal ctermbg=NONE
+" highlight CursorLine cterm=NONE ctermbg=Black ctermfg=NONE
+
+" coc.nvim
+
+ let g:coc_global_extensions = [
+  \ 'coc-json', 
+  \ 'coc-tsserver',
+  \ 'coc-emmet',
+  \ 'coc-css',
+  \ 'coc-phpls',
+  \ 'coc-go',
+  \ 'coc-python',
+  \ 'coc-vimlsp']
+
+"coc keymap
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<CR>"
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+				\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+
