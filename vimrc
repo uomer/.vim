@@ -35,9 +35,10 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 call plug#begin('~/.vim/plugged')
 Plug 'mhinz/vim-startify'
 Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
+Plug 'sainnhe/edge'
 Plug 'sainnhe/sonokai'
-" Plug 'liuchengxu/space-vim-dark'
-" Plug 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -51,7 +52,6 @@ set background=dark
 
 " colorscheme sonokai
 colorscheme gruvbox
-
 hi Comment cterm=italic
 
 " 背景透明
@@ -85,7 +85,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-nnoremap <silent> <leader>h :call <SID>show_documentation()<CR>
+" nnoremap <silent> <leader>h :call <SID>show_documentation()<CR>
 
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
