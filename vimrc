@@ -18,6 +18,7 @@ set updatetime=100
 
 let mapleader=" "
 imap jk <ESC>
+
 nmap <leader>o <C-w>o
 nmap <leader>h <C-w>h
 nmap <leader>j <C-w>j
@@ -35,7 +36,6 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 call plug#begin('~/.vim/plugged')
 Plug 'mhinz/vim-startify'
 Plug 'morhetz/gruvbox'
-Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/edge'
 Plug 'sainnhe/sonokai'
 Plug 'altercation/vim-colors-solarized'
@@ -57,6 +57,8 @@ hi Comment cterm=italic
 " 背景透明
 hi Normal ctermbg=NONE
 hi LineNr ctermbg=NONE
+hi CursorLineNr ctermbg=NONE
+hi CursorLine cterm=underline ctermbg=NONE
 hi SignColumn ctermbg=NONE
 " highlight CursorLine cterm=NONE ctermbg=Black ctermfg=NONE
 
