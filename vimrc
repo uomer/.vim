@@ -15,6 +15,7 @@ set fileencodings=utf-8,gbk,gb2312,gbk
 set scrolloff=5
 set laststatus=2
 set updatetime=100
+set mouse=a
 
 let mapleader=" "
 imap jk <ESC>
@@ -36,8 +37,8 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 call plug#begin('~/.vim/plugged')
 Plug 'mhinz/vim-startify'
 Plug 'morhetz/gruvbox'
-Plug 'sainnhe/edge'
-Plug 'sainnhe/sonokai'
+" Plug 'sainnhe/edge'
+" Plug 'sainnhe/sonokai'
 Plug 'altercation/vim-colors-solarized'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
@@ -60,7 +61,7 @@ hi LineNr ctermbg=NONE
 hi CursorLineNr ctermbg=NONE
 hi CursorLine cterm=underline ctermbg=NONE
 hi SignColumn ctermbg=NONE
-" highlight CursorLine cterm=NONE ctermbg=Black ctermfg=NONE
+highlight CursorLine cterm=NONE ctermbg=Black ctermfg=NONE
 
 " coc.nvim
 
@@ -89,5 +90,5 @@ nmap <silent> gr <Plug>(coc-references)
 
 " nnoremap <silent> <leader>h :call <SID>show_documentation()<CR>
 
-autocmd CursorHold * silent call CocActionAsync('highlight')
+" autocmd CursorHold * silent call CocActionAsync('highlight')
 
