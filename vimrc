@@ -59,7 +59,7 @@ hi Comment cterm=italic
 hi Normal ctermbg=NONE
 hi LineNr ctermbg=NONE
 hi CursorLineNr ctermbg=NONE
-hi CursorLine cterm=underline ctermbg=NONE
+" hi CursorLine cterm=underline ctermbg=NONE
 hi SignColumn ctermbg=NONE
 highlight CursorLine cterm=NONE ctermbg=Black ctermfg=NONE
 
