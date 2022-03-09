@@ -1,4 +1,5 @@
 set number
+set relativenumber
 set autoindent
 set expandtab
 set incsearch
@@ -15,7 +16,7 @@ set fileencodings=utf-8,utf-16,gbk,ucs-2le,ucs-2be
 set scrolloff=5
 set laststatus=2
 set updatetime=100
-set mouse=a
+set mouse=
 
 let mapleader=" "
 imap jk <ESC>
@@ -35,17 +36,17 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 
 
 call plug#begin('~/.vim/plugged')
-Plug 'mhinz/vim-startify'
-Plug 'morhetz/gruvbox'
-" Plug 'sainnhe/edge'
-" Plug 'sainnhe/sonokai'
-Plug 'altercation/vim-colors-solarized'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'preservim/nerdtree'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'chemzqm/wxapp.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+  Plug 'mhinz/vim-startify'
+  Plug 'morhetz/gruvbox'
+"  Plug 'sainnhe/edge'
+"  Plug 'sainnhe/sonokai'
+"  Plug 'altercation/vim-colors-solarized'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'preservim/nerdtree'
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+"  Plug 'chemzqm/wxapp.vim'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 set t_Co=256
