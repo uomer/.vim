@@ -17,6 +17,7 @@ set scrolloff=5
 set laststatus=2
 set updatetime=100
 set mouse=
+set guifont=Source\ Code\ Pro\ 14
 
 let mapleader=" "
 imap jk <ESC>
@@ -38,6 +39,7 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 call plug#begin('~/.vim/plugged')
   Plug 'mhinz/vim-startify'
   Plug 'morhetz/gruvbox'
+  Plug 'godlygeek/tabular'
 "  Plug 'sainnhe/edge'
 "  Plug 'sainnhe/sonokai'
 "  Plug 'altercation/vim-colors-solarized'
@@ -52,7 +54,6 @@ call plug#end()
 set t_Co=256
 set background=dark
 
-" colorscheme sonokai
 colorscheme gruvbox
 hi Comment cterm=italic
 
