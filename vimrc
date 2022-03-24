@@ -34,7 +34,7 @@ nnoremap <leader>K <C-w>K
 nnoremap <leader>bd :bd<CR>
 nnoremap <leader>bn :bn<CR>
 nnoremap <leader>bp :bp<CR>
-nnoremap <leader>nt :NERDTreeToggle<CR>
+nnoremap <leader>t :NERDTreeToggle<CR>
 " }}}
 
 " AutoOpenPOS: 自动定位上次关闭时的位置 {{{
