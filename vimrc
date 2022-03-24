@@ -1,10 +1,10 @@
+" Base: {{{
 set number
 set relativenumber
 set autoindent
 set expandtab
 set incsearch
 set cursorline
-" set cursorcolumn
 set wildmenu
 syntax on
 set softtabstop=2
@@ -18,39 +18,49 @@ set laststatus=2
 set updatetime=100
 set mouse=
 set guifont=Source\ Code\ Pro\ 14
+" }}}
 
-let mapleader=" "
+" Map: {{{
+let mapleader = " "
 inoremap jk <ESC>
 
-nnoremap <leader>o <C-w>o
-nnoremap <leader>h <C-w>h
-nnoremap <leader>j <C-w>j
-nnoremap <leader>k <C-w>k
-nnoremap <leader>l <C-w>l
+nnoremap <leader>wo <C-w>o
+nnoremap <leader>wh <C-w>h
+nnoremap <leader>wj <C-w>j
+nnoremap <leader>wk <C-w>k
+nnoremap <leader>wl <C-w>l
+nnoremap <leader>H <C-w>H
+nnoremap <leader>K <C-w>K
 nnoremap <leader>bd :bd<CR>
 nnoremap <leader>bn :bn<CR>
 nnoremap <leader>bp :bp<CR>
-nnoremap <leader>r :e!<cr>
-nnoremap <leader>t :NERDTreeToggle<CR>
+nnoremap <leader>nt :NERDTreeToggle<CR>
+" }}}
 
+" AutoOpenPOS: 自动定位上次关闭时的位置 {{{
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+"}}}
 
-
+" Plug: {{{
 call plug#begin('~/.vim/plugged')
   Plug 'mhinz/vim-startify'
   Plug 'morhetz/gruvbox'
   Plug 'godlygeek/tabular'
-"  Plug 'sainnhe/edge'
-"  Plug 'sainnhe/sonokai'
-"  Plug 'altercation/vim-colors-solarized'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'preservim/nerdtree'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 "  Plug 'chemzqm/wxapp.vim'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
-call plug#end()
 
+  Plug 'junegunn/fzf', {'do': './install --all'}
+  Plug 'junegunn/fzf.vim'
+  Plug 'w0rp/ale'
+  " Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+call plug#end()
+" }}}
+
+" Color: {{{
 set t_Co=256
 set background=dark
 
@@ -64,8 +74,48 @@ hi CursorLineNr ctermbg=NONE
 " hi CursorLine cterm=underline ctermbg=NONE
 hi SignColumn ctermbg=NONE
 highlight CursorLine cterm=NONE ctermbg=Black ctermfg=NONE
+"}}}
 
-" coc.nvim
+" ale 配置: {{{
+
+let g:ale_lint_on_text_changed  = 'normal'                      " 代码更改后启动检查
+let g:ale_lint_on_insert_leave  = 1                             " 退出插入模式即检查
+let g:ale_sign_column_always    = 1                             " 总是显示动态检查结果
+let g:ale_sign_error            = '>>'                          " error 告警符号
+let g:ale_sign_warning          = '--'                          " warning 告警符号
+let g:ale_echo_msg_error_str    = 'E'                           " 错误显示字符
+let g:ale_echo_msg_warnning_str = 'W'                           " 警告显示字符
+let g:ale_echo_msg_format       = '[%linter%] %s [%serverity%]' " 告警显示格式
+
+" <F9> 触发/关闭代码动态检查
+map <F9> :ALEToggle<CR>
+nmap <C-k> <Plug>(ale_previous_wrap)
+nmap <C-j> <Plug>(ale_next_wrap)
+nmap <leader><leader>d :ALEDetail<CR>
+" }}}
+
+" FZF: {{{
+" 此命令依赖 ripgrep ripgrep 安装请参照 https://github.com/BurntSushi/ripgrep
+command! -bang -nargs=* Rg
+      \ call fzf#vim#grep(
+      \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+      \   <bang>0 ? fzf#vim#with_preview('up:60%')
+      \           : fzf#vim#with_preview(right:50%:hidden', '?'),
+      \   <bang>0)
+
+" 在当前目录搜索文件
+nnoremap <Leader>f :Files<CR>
+" 切换 Buffer
+nnoremap <Leader>b :Buffers<CR>
+" 在当前所有加载的 Buffer 中搜索包含目标词的所有行
+nnoremap <Leader>l :Lines<CR>
+" 在当前 Buffer 中搜索包含目标词的所有行
+nnoremap <Leader>bl :BLines<CR>
+" 在 Vim 打开的历史文件中搜索，相当于是在 MRU 中搜索
+nnoremap <Leader>h :History<CR>
+" }}}
+
+" Coc: {{{
 
  let g:coc_global_extensions = [
   \ 'coc-json', 
@@ -81,16 +131,6 @@ highlight CursorLine cterm=NONE ctermbg=Black ctermfg=NONE
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<CR>"
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 				\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+"}}}
 
-nnoremap <silent> [g <Plug>(coc-diagnostic-prev)
-nnoremap <silent> ]g <Plug>(coc-diagnostic-next)
-
-nnoremap <silent> gd <Plug>(coc-definition)
-nnoremap <silent> gy <Plug>(coc-type-definition)
-nnoremap <silent> gi <Plug>(coc-implementation)
-nnoremap <silent> gr <Plug>(coc-references)
-
-" nnoremap <silent> <leader>h :call <SID>show_documentation()<CR>
-
-" autocmd CursorHold * silent call CocActionAsync('highlight')
-
+" vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:
