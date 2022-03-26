@@ -124,6 +124,10 @@ nnoremap <Leader>h :History<CR>
   \ 'coc-css',
   \ 'coc-phpls',
   \ 'coc-go',
+  \ 'coc-webview',
+  \ 'coc-markdownlint',
+  \ 'coc-markdown-preview-enhanced',
+  \ 'coc-markmap',
   \ 'coc-python',
   \ 'coc-vimlsp']
 
@@ -131,6 +135,18 @@ nnoremap <Leader>h :History<CR>
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<CR>"
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 				\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
 "}}}
 
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:
