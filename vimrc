@@ -16,7 +16,7 @@ set fileencodings=utf-8,gbk,ucs-2le,ucs-2be,utf-16
 set scrolloff=5
 set laststatus=2
 set updatetime=100
-set mouse=
+set mouse=a
 set guifont=Source\ Code\ Pro\ 14
 " }}}
 
